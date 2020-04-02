@@ -1,0 +1,18 @@
+{% extends 'accounts/layouts/main.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+    <h1>delete order</h1>
+        <form method="post" action="{% url 'delete_order' order.id %}">
+            {% csrf_token %}
+            <h6> Are Yoy sure u wanna delete this order ???</h6>
+            <button type="submit" class="btn btn-danger">Yes</button>
+            <a href="{% url 'home' %}">
+                <button type="button" class="btn btn-warning">Cancel</button>
+                </a>
+        </form>
+
+
+
+    </div>
+{% endblock %}

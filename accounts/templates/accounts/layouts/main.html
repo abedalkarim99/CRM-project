@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRM</title>
+    <link rel="stylesheet" href="{% static 'accounts/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
+</head>
+<body>
+
+{% include 'accounts/layouts/navbar.html' %}
+<div class="container">
+{% block content %}
+
+
+{% endblock %}
+</div>
+<hr class="my-4">
+<h1 style="background-color: darkslategrey">footer</h1>
+<script src="{% static 'accounts/js/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'accounts/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'accounts/js/script.js' %}"></script>
+</body>
+</html>

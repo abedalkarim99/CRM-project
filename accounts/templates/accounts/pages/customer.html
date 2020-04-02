@@ -1,0 +1,53 @@
+
+{% extends 'accounts/layouts/main.html' %}
+
+{% block content %}
+
+  <h1 style="text-align: center">hello from customer</h1>
+
+    {% include 'accounts/layouts/customer/cards.html' %}
+    <br>
+    <hr class="my-4">
+
+
+    {% include 'accounts/layouts/customer/search.html' %}
+
+    <br>
+    <hr class="my-4">
+            <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-hover" style="border-collapse: separate;">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Products</th>
+                      <th scope="col">Note</th>
+                          <th scope="col">Date Orderd</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Update</th>
+                          <th scope="col">Delete</th>
+                    </tr>
+                  </thead>
+                <tbody>
+                      {% for order in orders %}
+                        <tr>
+                          <td>{{order.product.name}}</td>
+                          <td>{{order.note}}</td>
+                          <td>{{order.date_created}}</td>
+                          <td>{{order.status}}</td>
+                          <td><a class="btn btn-sm btn-warning" style="width: 100%" href="{% url 'update_order' order.id %}" >update</a> </td>
+                          <td><a class="btn btn-sm btn-danger" style="width: 100%" href="{% url 'delete_order' order.id %}" >delete</a> </td>
+
+                        </tr>
+                  {% endfor %}
+                  </tbody>
+            </table>
+
+
+        </div>
+    </div>
+
+    <hr class="my-4">
+
+
+{% endblock %}
+

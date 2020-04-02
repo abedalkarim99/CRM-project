@@ -1,0 +1,15 @@
+{% extends 'accounts/layouts/main.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+    <h1>order</h1>
+        <form method="post" action="{% url 'update_order' order_id %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn badge-warning">Create Oreder</button>
+        </form>
+
+
+
+    </div>
+{% endblock %}
